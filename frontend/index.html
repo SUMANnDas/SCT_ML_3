@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat vs Dog Classifier</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🐱 Cat vs Dog Classifier 🐶</h1>
+            <p>Upload an image to find out if it's a cat or dog!</p>
+        </header>
+        
+        <main>
+            <div class="upload-section">
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-content">
+                        <div class="upload-icon">📸</div>
+                        <p>Click to upload or drag and drop an image</p>
+                        <span class="file-types">Supports: JPG, PNG, JPEG</span>
+                    </div>
+                    <input type="file" id="fileInput" accept="image/*" hidden>
+                </div>
+                
+                <div class="image-preview" id="imagePreview" style="display: none;">
+                    <img id="previewImg" alt="Preview">
+                    <button class="remove-btn" id="removeBtn">×</button>
+                </div>
+                
+                <button class="predict-btn" id="predictBtn" disabled>
+                    <span class="btn-text">Predict</span>
+                    <span class="btn-loader" style="display: none;">🔄</span>
+                </button>
+            </div>
+            
+            <div class="result-section" id="resultSection" style="display: none;">
+                <div class="result-card">
+                    <div class="result-emoji" id="resultEmoji"></div>
+                    <div class="result-text" id="resultText"></div>
+                    <div class="confidence-bar">
+                        <div class="confidence-label">Confidence</div>
+                        <div class="confidence-progress">
+                            <div class="confidence-fill" id="confidenceFill"></div>
+                        </div>
+                        <div class="confidence-value" id="confidenceValue"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="error-message" id="errorMessage" style="display: none;"></div>
+        </main>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
